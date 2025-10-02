@@ -1,5 +1,25 @@
 // Smooth scrolling for navigation links
 document.addEventListener('DOMContentLoaded', function() {
+    // Theme init
+    const body = document.body;
+    const savedTheme = localStorage.getItem('theme');
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const themeToggleLabel = document.getElementById('themeToggleLabel');
+    function setToggleUI(isDark) {
+        if (!themeToggleBtn) return;
+        themeToggleBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        if (themeToggleLabel) themeToggleLabel.textContent = isDark ? 'Light' : 'Dark';
+        if (themeToggleLabel && !themeToggleBtn.contains(themeToggleLabel)) {
+            themeToggleBtn.appendChild(themeToggleLabel);
+        }
+    }
+    if (savedTheme === 'dark') {
+        body.classList.add('dark');
+        setTimeout(() => setToggleUI(true), 0);
+    } else {
+        setTimeout(() => setToggleUI(false), 0);
+    }
+
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('.nav-link');
     
@@ -146,6 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu functionality
     function createMobileMenu() {
         const header = document.querySelector('.header');
+        const headerContainer = document.querySelector('.header .container');
         const nav = document.querySelector('.nav');
         
         // Remove existing mobile menu button if it exists
@@ -194,8 +215,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Add mobile menu button to header
-        header.appendChild(mobileMenuBtn);
+        // Add mobile menu button inside header container for proper layout
+        ;(headerContainer || header).appendChild(mobileMenuBtn);
     }
 
     // Initialize mobile menu for small screens
@@ -255,6 +276,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize particles
     createParticles();
+
+    // Theme toggle
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            body.classList.toggle('dark');
+            const isDark = body.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            setToggleUI(isDark);
+
+            // Refresh particle colors by recreating container
+            const old = document.querySelector('.particles');
+            if (old) old.remove();
+            createParticles();
+        });
+    }
 
     // Scroll to Top Button functionality
     const scrollToTopBtn = document.getElementById('scrollToTop');
@@ -336,7 +373,7 @@ style.textContent = `
         position: absolute;
         width: 2px;
         height: 2px;
-        background: rgba(139, 92, 246, 0.5);
+        background: rgba(139, 92, 246, 0.35);
         border-radius: 50%;
         animation: float linear infinite;
     }

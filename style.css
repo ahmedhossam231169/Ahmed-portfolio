@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-    color: #ffffff;
+    background: linear-gradient(135deg, #ffffff 0%, #fafbfe 50%, #f5f7ff 100%);
+    color: #111827;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -25,10 +25,11 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(26, 26, 46, 0.95);
+    background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 1rem 0;
+    box-shadow: 0 4px 16px rgba(17, 24, 39, 0.06);
 }
 
 .header .container {
@@ -37,6 +38,10 @@ body {
     align-items: center;
     width: 100%;
 }
+/* Ensure nav and actions align nicely */
+.header .nav { flex: 1 1 auto; display: flex; justify-content: center; }
+.header .nav-brand { flex: 0 0 auto; }
+.header .theme-toggle { flex: 0 0 auto; }
 
 .logo-a {
     display: flex;
@@ -88,7 +93,7 @@ body {
 }
 
 .nav-link {
-    color: #ffffff;
+    color: #1f2937;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -120,7 +125,7 @@ body {
     display: flex;
     align-items: center;
     padding-top: 80px;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f9fbff 50%, #f3f6ff 100%);
 }
 
 .hero-content {
@@ -146,7 +151,7 @@ body {
 
 .hero-subtitle {
     font-size: 1.2rem;
-    color: #a0a0a0;
+    color: #6b7280;
     margin-bottom: 0.5rem;
 }
 
@@ -179,7 +184,7 @@ body {
 
 .hero-tagline {
     font-size: 1.1rem;
-    color: #a0a0a0;
+    color: #6b7280;
     margin-bottom: 2rem;
 }
 
@@ -201,7 +206,7 @@ body {
 
 .hero-description {
     font-size: 1.1rem;
-    color: #d1d5db;
+    color: #4b5563;
     max-width: 500px;
 }
 
@@ -210,13 +215,13 @@ body {
     max-width: 500px;
     height: auto;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(17, 24, 39, 0.15);
 }
 
 /* Work Experience Section */
 .work-experience {
     padding: 6rem 0;
-    background: rgba(0, 0, 0, 0.2);
+    background: #ffffff;
 }
 
 .section-title {
@@ -239,10 +244,10 @@ body {
 }
 
 .experience-card {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+    background: #ffffff;
     padding: 2rem;
-    border-radius: 8px;
-    border: 1px solid rgba(139, 92, 246, 0.15);
+    border-radius: 12px;
+    border: 1px solid rgba(17, 24, 39, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -252,6 +257,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    box-shadow: 0 6px 18px rgba(17, 24, 39, 0.06);
 }
 
 .experience-card::before {
@@ -261,13 +267,13 @@ body {
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(45deg, rgba(139, 92, 246, 0.3), rgba(168, 85, 247, 0.3));
+    background: linear-gradient(45deg, rgba(139, 92, 246, 0.25), rgba(168, 85, 247, 0.25));
 }
 
 .experience-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(139, 92, 246, 0.2);
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%);
+    box-shadow: 0 20px 32px rgba(17, 24, 39, 0.12);
+    background: #ffffff;
 }
 
 .card-icon {
@@ -281,11 +287,11 @@ body {
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 0.8rem;
-    color: #ffffff;
+    color: #111827;
 }
 
 .card-description {
-    color: rgba(209, 213, 219, 0.8);
+    color: #4b5563;
     line-height: 1.5;
     font-size: 0.95rem;
 }
@@ -311,7 +317,7 @@ body {
 
 .skills-text {
     font-size: 1.3rem;
-    color: #d1d5db;
+    color: #4b5563;
     max-width: 800px;
     margin: 0 auto 3rem;
     line-height: 1.6;
@@ -331,9 +337,9 @@ body {
     align-items: center;
     gap: 0.5rem;
     padding: 1rem;
-    background: rgba(139, 92, 246, 0.1);
+    background: rgba(139, 92, 246, 0.08);
     border-radius: 15px;
-    border: 1px solid rgba(139, 92, 246, 0.3);
+    border: 1px solid rgba(139, 92, 246, 0.25);
     transition: transform 0.3s ease;
     min-width: 80px;
 }
@@ -506,7 +512,7 @@ body {
 /* Projects Section */
 .projects {
     padding: 6rem 0;
-    background: rgba(0, 0, 0, 0.2);
+    background: #f7f8fc;
 }
 
 .project {
@@ -529,7 +535,7 @@ body {
 
 .project-description {
     font-size: 1.2rem;
-    color: #d1d5db;
+    color: #4b5563;
     line-height: 1.7;
     max-width: 800px;
     margin-bottom: 3rem;
@@ -543,12 +549,13 @@ body {
 }
 
 .project-mockup {
-    background: linear-gradient(135deg, #2d1b69 0%, #1a1a2e 100%);
-    border-radius: 15px;
+    background: #ffffff;
+    border-radius: 16px;
     padding: 2rem;
-    border: 1px solid rgba(139, 92, 246, 0.2);
+    border: 1px solid rgba(17, 24, 39, 0.08);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 6px 18px rgba(17, 24, 39, 0.06);
 }
 
 .mockup-content {
@@ -563,16 +570,16 @@ body {
 }
 
 .mockup-body {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(139, 92, 246, 0.05);
     padding: 1.5rem;
-    border-radius: 10px;
-    border: 1px solid rgba(139, 92, 246, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(139, 92, 246, 0.15);
 }
 
 .mockup-text {
     font-size: 1rem;
     margin-bottom: 0.5rem;
-    color: #ffffff;
+    color: #111827;
 }
 
 .mockup-feature {
@@ -630,11 +637,12 @@ body {
 .contact {
     padding: 6rem 0;
     text-align: center;
+    background: #ffffff;
 }
 
 .contact-text {
     font-size: 1.3rem;
-    color: #d1d5db;
+    color: #4b5563;
     max-width: 800px;
     margin: 0 auto 3rem;
     line-height: 1.6;
@@ -649,7 +657,7 @@ body {
 
 .contact-email {
     font-size: 1.5rem;
-    color: #ffffff;
+    color: #111827;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
@@ -670,10 +678,10 @@ body {
     justify-content: center;
     width: 50px;
     height: 50px;
-    background: rgba(139, 92, 246, 0.1);
-    border: 1px solid rgba(139, 92, 246, 0.3);
+    background: rgba(139, 92, 246, 0.08);
+    border: 1px solid rgba(139, 92, 246, 0.25);
     border-radius: 50%;
-    color: #ffffff;
+    color: #1f2937;
     text-decoration: none;
     font-size: 1.5rem;
     transition: all 0.3s ease;
@@ -682,7 +690,8 @@ body {
 .social-link:hover {
     background: #8b5cf6;
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+    color: #ffffff;
+    box-shadow: 0 10px 20px rgba(139, 92, 246, 0.25);
 }
 
 /* Responsive Design */
@@ -772,40 +781,56 @@ body {
 .mobile-menu-btn {
     display: none;
     background: none;
-    border: none;
-    color: #ffffff;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    color: #1f2937;
     font-size: 1.5rem;
     cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 5px;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
     transition: all 0.3s ease;
     z-index: 1001;
     margin-left: auto;
 }
 
 .mobile-menu-btn:hover {
-    background: rgba(139, 92, 246, 0.2);
+    background: rgba(139, 92, 246, 0.12);
     color: #8b5cf6;
 }
 
 .mobile-menu-btn.active {
-    background: rgba(139, 92, 246, 0.3);
+    background: rgba(139, 92, 246, 0.18);
     color: #8b5cf6;
 }
+
+/* Theme toggle (always visible) */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    color: #1f2937;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-left: 12px;
+}
+.theme-toggle:hover { background: rgba(139, 92, 246, 0.12); color: #8b5cf6; }
+body.dark .theme-toggle { color: #e5e7eb; border-color: rgba(139, 92, 246, 0.35); }
+body.dark .theme-toggle:hover { background: rgba(139, 92, 246, 0.22); }
 
 @media (max-width: 768px) {
     .header .container {
         position: relative;
+        gap: 8px;
     }
     
-    .mobile-menu-btn {
-        display: block;
-        order: 2;
-    }
+    .mobile-menu-btn { display: block; order: 3; }
+    .theme-toggle { order: 2; font-size: 0.95rem; padding: 0.45rem 0.6rem; }
     
-    .nav-brand {
-        order: 1;
-    }
+    .nav-brand { order: 1; }
     
     .nav {
         position: absolute;
@@ -824,6 +849,8 @@ body {
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         z-index: 1000;
     }
+    body.light .nav { background: rgba(255,255,255,0.98); }
+    body.dark .nav { background: rgba(17,24,39,0.98); }
     
     .nav.mobile-active {
         transform: translateY(0);
@@ -1048,6 +1075,64 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Dark mode root */
+body.dark {
+    color: #e5e7eb;
+    background: linear-gradient(135deg, #0b1020 0%, #0e1630 50%, #0b1330 100%);
+}
+
+/* Header */
+body.dark .header {
+    background: rgba(17, 24, 39, 0.9);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+body.dark #themeToggle { color: #e5e7eb; border-color: rgba(139, 92, 246, 0.35); }
+body.dark #themeToggle:hover { background: rgba(139, 92, 246, 0.22); }
+
+/* Navigation */
+body.dark .nav-link { color: #e5e7eb; }
+body.dark .nav-link.active { color: #8b5cf6; }
+
+/* Hero */
+body.dark .hero {
+    background: linear-gradient(135deg, #0b1020 0%, #0e1630 50%, #0b1330 100%);
+}
+body.dark .hero-subtitle,
+body.dark .hero-tagline,
+body.dark .hero-description { color: #cbd5e1; }
+body.dark .profile-image { box-shadow: 0 20px 40px rgba(0,0,0,0.35); }
+
+/* Sections */
+body.dark .work-experience { background: rgba(0,0,0,0.2); }
+body.dark .projects { background: #0f172a; }
+body.dark .contact { background: rgba(0,0,0,0.2); }
+
+/* Cards */
+body.dark .experience-card,
+body.dark .project-mockup { 
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.07) 0%, rgba(168, 85, 247, 0.07) 100%);
+    border-color: rgba(139, 92, 246, 0.2);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+body.dark .mockup-body {
+    background: rgba(139, 92, 246, 0.12);
+    border-color: rgba(139, 92, 246, 0.25);
+}
+body.dark .mockup-text { color: #ffffff; }
+body.dark .card-title { color: #ffffff; }
+body.dark .card-description, 
+body.dark .skills-text, 
+body.dark .project-description, 
+body.dark .contact-text { color: #cbd5e1; }
+
+/* Links & buttons */
+body.dark .project-link:hover { background: transparent; }
+body.dark .contact-email { color: #e5e7eb; }
+body.dark .social-link { background: rgba(139,92,246,0.12); color: #e5e7eb; border-color: rgba(139,92,246,0.35); }
+
+/* Scrollbar */
+body.dark ::-webkit-scrollbar-track { background: #0f172a; }
+
 /* Scroll to Top Button */
 .scroll-to-top {
     position: fixed;
@@ -1095,7 +1180,7 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-    background: #1a1a2e;
+    background: #eef2ff;
 }
 
 ::-webkit-scrollbar-thumb {
